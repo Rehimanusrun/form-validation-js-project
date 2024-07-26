@@ -1,0 +1,185 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FORM VALIDATION</title>
+    <script language="javascript">
+    function clickk()
+    {
+         if(document.form1.name1.value=="")
+            {
+                alert("please enter your name");
+                document.form1.name1.focus();
+                return false;
+            }
+        if(document.form1.pass1.value=="")
+        {
+            alert("please enter a password");
+            document.form1.pass1.focus() ;
+            return false;
+
+        }
+        if((document.form1.pass1.value) !=(document.form1.pass2.value))
+        {
+            alert("Re-entered password not same");
+            document.form1.pass2.focus();
+            return false;
+        }
+        if(document.form1.age1.selectedIndex==0)
+        {
+            alert("please select the age");
+            document.form1.age1.focus();
+            return false;
+        }
+        if(document.form1.gender1[0].checked==false && document.form1.gender1[1].checked==false)
+        {
+            alert("please select the gender");
+            document.form1.gender1.focus();
+            return false;
+        }
+        if(document.form1.c1.checked==false && document.form1.c2.checked==false && document.form1.c3.checked==false)
+        {
+            alert("please select the qualification");
+            return false;
+        }
+        var emailexp=/^[\w\-\.\+\!]+\@[a-zA-Z0-9\.\-]+\.[\w\-\.]{2,3}$/;
+        if(document.form1.email1.value.match(emailexp))
+        {
+
+        }
+        else
+        {
+            alert("please enter valid email id");
+            return false;
+        }
+        if(document.form1.term.checked==false)
+        {
+            alert("please accept all terms & conditions");
+            return false;
+        }
+        alert("form submitted successfully");
+        return true;
+
+            
+    }
+        
+        
+    </script>
+</head>
+<body>
+<form name="form1">
+<h1><center>USER FORM</center></h1>
+<table align="center" width="500" height="400" border="1" >
+    
+    <tr align="center">
+        
+        <td>
+            ENTER NAME
+        </td>
+        <td>
+            <input type="text" name="name1">
+        </td>
+    
+        </tr>
+        <tr align="center">
+            <td>
+                PASSWORD
+            </td>
+            <td>
+                <input type="password" name="pass1">
+            </td>
+        </tr>
+        <tr align="center">
+            <td>
+                RE-ENTER PASSSWORD
+            </td>
+            <td>
+                <input type="password" name="pass2">
+            </td>
+        </tr>
+        <tr align="center">
+            <td>
+                AGE
+            </td>
+            <td>
+                <select name="age1" >
+                <option value="">SELECT</option>
+                <option value="">18-25</option>
+                <option value="">25-40</option>
+                <option value="">40-60</option>
+                <option value="">60 above</option>
+                </select>
+            </td>
+        </tr>
+        <tr align="center">
+            <td>
+                GENDER
+            </td>
+            <td>
+                <input type="radio" name="gender1">MALE
+                <input type="radio" name="gender1">FEMALE
+
+            </td>
+        </tr>
+        <tr align="center">
+            <td>
+                QUALIFICAION
+            </td>
+            <td>
+                <input type="checkbox" name="c1">B.E 
+                <input type="checkbox" name="c2">B.TECH
+                <input type="checkbox" name="c3">MSC
+                
+            </td>
+        </tr>
+        <tr align="center">
+            <td>
+                ENTER EMAIL ID
+            </td>
+            <td>
+                <input type="email" name="email1">
+            </td>
+        </tr>
+        <tr align="center">
+            <td>
+                READ TERMS & CONDITIONS
+            </td>
+            <td>
+                Accept :<input type="checkbox" name="term">
+            </td>
+        </tr>
+        <tr align="center" >
+        <td>
+
+        </td>
+        <td>
+        <input  type="submit"  onclick="clickk()">
+        <input  type="reset" name="res1">
+
+        </td>
+    </tr>
+    
+</table>
+</form>  
+</body>
+<style>
+    body {
+        background-image:url('bg image.png');
+        background-size: cover;
+        
+    }
+    h1{
+        font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+        font-weight: 100;
+        font-stretch: expanded;
+        color: azure;
+    }
+    table{
+        background-color: lightsteelblue;
+    }
+    input:focus {
+    outline: none; /* Remove the default focus outline */
+    border-color: rgb(9, 9, 67); /* Change the border color on focus */
+}
+</style>
+</html>
